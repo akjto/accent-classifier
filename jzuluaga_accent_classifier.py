@@ -100,32 +100,3 @@ handler = Mangum(app)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("jzuluaga_accent_classifier:app", host="0.0.0.0", port=8000, reload=True)
-
-# - us  
-# - england  
-# - australia  
-# - indian  
-# - canada  
-# - bermuda  
-# - scotland  
-# - african  
-# - ireland  
-# - newzealand  
-# - wales  
-# - malaysia  
-# - philippines  
-# - singapore  
-# - hongkong  
-# - southatlandtic
-
-# {
-#   "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-# }
-
-
-# Or for direct MP4/WAV links:
-# {
-#   "url": "https://example.com/sample_audio.mp4"
-# }
-
-#uvicorn jzuluaga_accent_classifier:app --reload
