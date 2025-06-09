@@ -1,0 +1,12 @@
+torch
+torchaudio
+numpy
+fastapi
+pydantic
+uvicorn
+speechbrain==0.5.14
+transformers
+requests
+yt-dlp
+mangum
+runpod
