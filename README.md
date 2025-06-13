@@ -24,8 +24,6 @@ A confidence score (e.g., 0–100%)
 
 This tool is intended for internal use to assist in hiring processes.
 
-What We're Looking For
-
 Practicality: The tool must work reliably.
 
 Creativity: Smart or resourceful implementations are appreciated.
