@@ -44,7 +44,7 @@ Submission link: Submit your work
 
 #### Time Expectation
 
-Time-bounded of 4–6 hours and complete a proof-of-concept.
+Time-bounded of 4–6 hours to complete a proof-of-concept.
 
 ### **III. Tech Stack Used**
 
