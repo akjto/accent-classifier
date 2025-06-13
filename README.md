@@ -44,7 +44,7 @@ Submission link: Submit your work
 
 #### Time Expectation
 
-Please do not spend more than 4–6 hours. We are looking for a proof-of-concept.
+Time-bounded of 4–6 hours and complete a proof-of-concept.
 
 ### **III. Tech Stack Used**
 
