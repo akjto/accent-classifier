@@ -8,7 +8,7 @@ from speechbrain.pretrained.interfaces import foreign_class
 from fastapi.responses import JSONResponse
 from mangum import Mangum
 
-# Windows fix
+# Windows fix for local file error
 os.environ["SPEECHBRAIN_LOCAL_FILE_STRATEGY"] = "copy"
 
 app = FastAPI()
