@@ -13,5 +13,4 @@ def handler(event):
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-# 🔧 REQUIRED: keep the worker running to receive tasks
 runpod.serverless.start({"handler": handler})
