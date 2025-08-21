@@ -4,7 +4,11 @@ import torchaudio
 import requests
 from speechbrain.pretrained.interfaces import foreign_class
 
+<<<<<<< HEAD
 # Windows fix for SpeechBrain local file caching
+=======
+# Windows fix for local file error
+>>>>>>> 180cf1797a47a38f709d9e494140dd8087839849
 os.environ["SPEECHBRAIN_LOCAL_FILE_STRATEGY"] = "copy"
 
 def download_audio(url, output_path="audio.wav"):
@@ -57,3 +61,41 @@ def classify_accent(audio_path):
         "accent": label[0].title(),
         "confidence": f"{round(float(score[0]) * 100, 1)}%"
     }
+<<<<<<< HEAD
+=======
+
+@app.post("/classify-accent")
+async def classify_endpoint(payload: VideoURLRequest, request: Request):
+    try:
+        wav_path = download_audio(payload.url)
+        result = classify_accent(wav_path)
+        return {"status": "success", "result": result}
+    
+    except subprocess.CalledProcessError as e:
+        error_msg = f"Video processing failed. Possible bad or truncated URL. Details: {str(e)}"
+        raise HTTPException(status_code=400, detail=error_msg)
+
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=404, detail=f"Audio extraction failed: {str(e)}")
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
+
+@app.exception_handler(HTTPException)
+async def custom_http_exception_handler(request: Request, exc: HTTPException):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "status": "error",
+            "message": exc.detail,
+            "code": exc.status_code,
+            "path": request.url.path
+        },
+    )
+
+handler = Mangum(app)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("jzuluaga_accent_classifier:app", host="0.0.0.0", port=8000, reload=True)
+>>>>>>> 180cf1797a47a38f709d9e494140dd8087839849
